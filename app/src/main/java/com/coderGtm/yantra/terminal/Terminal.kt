@@ -126,7 +126,6 @@ class Terminal(
         "cmdrequest" to com.coderGtm.yantra.commands.cmdrequest.Command::class.java,
         "feedback" to com.coderGtm.yantra.commands.feedback.Command::class.java,
         "support" to com.coderGtm.yantra.commands.support.Command::class.java,
-        "fontpack" to com.coderGtm.yantra.commands.fontpack.Command::class.java,
         "exit" to com.coderGtm.yantra.commands.exit.Command::class.java,
     )
     var initialized = false
@@ -398,7 +397,7 @@ class Terminal(
 
     private fun printIntro() {
         output("${activity.applicationInfo.loadLabel(activity.packageManager)} (v${BuildConfig.VERSION_NAME}) on ${Build.MANUFACTURER} ${Build.MODEL}",theme.resultTextColor, Typeface.BOLD)
-        output("Type 'help' or 'community' for more information.", theme.resultTextColor, Typeface.BOLD)
+        output(activity.getString(R.string.intro_help_or_community), theme.resultTextColor, Typeface.BOLD)
         output("==================",theme.resultTextColor, Typeface.BOLD)
     }
 
